@@ -60,6 +60,16 @@ class ContactBookManager:
         else:
             print("Contact not found.")
 
+    def delete_contact(self):
+        name = input("Enter name to delete: ")
+        initial_length = len(self.contacts)
+        self.contacts = [contact for contact in self.contacts if contact.name.lower() != name.lower()]
+        if len(self.contacts) < initial_length:
+            print("Contact deleted successfully!")
+        else:
+            print("Contact not found.")
+
+
 if __name__ == "__main__":
     manager = ContactBookManager()
     manager.start()
