@@ -43,6 +43,14 @@ class ContactBookManager:
         self.contacts.append(Contact(name, phone, email))
         print("Contact added successfully!")
 
+    def view_contacts(self):
+        if not self.contacts:
+            print("No contacts found.")
+            return
+        print("\nContact List:")
+        for contact in self.contacts:
+            print(contact)
+
 if __name__ == "__main__":
     manager = ContactBookManager()
     manager.start()
