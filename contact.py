@@ -36,6 +36,12 @@ class ContactBookManager:
             else:
                 print("Invalid choice! Please try again.")
 
+    def add_contact(self):
+        name = input("Enter Name: ")
+        phone = input("Enter Phone: ")
+        email = input("Enter Email: ")
+        self.contacts.append(Contact(name, phone, email))
+        print("Contact added successfully!")
 
 if __name__ == "__main__":
     manager = ContactBookManager()
