@@ -51,6 +51,15 @@ class ContactBookManager:
         for contact in self.contacts:
             print(contact)
 
+    def search_contact(self):
+        name = input("Enter name to search: ")
+        found = [contact for contact in self.contacts if contact.name.lower() == name.lower()]
+        if found:
+            for contact in found:
+                print(contact)
+        else:
+            print("Contact not found.")
+
 if __name__ == "__main__":
     manager = ContactBookManager()
     manager.start()
